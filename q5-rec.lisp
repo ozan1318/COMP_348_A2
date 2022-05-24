@@ -1,0 +1,4 @@
+( defun tribonacci-seq ( tc &optional ( t1 0 ) ( t2 0 ) ( t3 1 ) ( acc ( ) ) ) ; tc: term count, t1: first term that will be added, default is 0, t2: second term to be added, default is 0, t3: third term to be added, default is 1, acc: list to accumulate the values in a list, default is empty list
+    ( if ( = tc 0 ) ; check if tc is 0
+         ( nreverse acc ) ; if 0, reverse the accumulator and return it
+         ( tribonacci-seq ( 1- tc ) t2 t3  ( + t1 t2 t3 ) ( cons t1 acc ) ) ) ) ; if not 0, recursively call tribonacci-seq with tc decremented, t2 passed for t1, t3 for t2, t1+t2+t3 for t3. t1+t2+t3 is also appended to the accumulator, creating a reverse tribonacci sequence.

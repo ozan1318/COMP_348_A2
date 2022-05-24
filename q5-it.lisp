@@ -1,0 +1,7 @@
+( defun tribonacci-seq ( tc )
+    ( do ( ( n 0 ( 1+ n ) )
+          ( cur 0 next )
+          ( next 0 nnext )
+          ( nnext 1 ( + cur next nnext ) )
+          ( acc '( ) ( append acc ( list cur ) ) ) )
+        ( ( = tc n) acc ) ) )
